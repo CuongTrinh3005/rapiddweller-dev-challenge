@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: api-gateway
+#  zipkin:
+#    base-url: http://localhost:9411
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+#            allowedOrigins: 'http://localhost:3000'
+            allowedOrigins: '*'
+            allowedHeaders:
+              - Content-Type
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+        - id: compiler-service
+          uri: lb://COMPILER-SERVICE
+          predicates:
+            - Path=/api/v1/execute/**
+        - id: translate-service
+          uri: lb://TRANSLATE-SERVICE
+          predicates:
+            - Path=/api/v1/translate/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetchRegistry: true
+    registerWithEureka: true
+  instance:
+    hostname: localhost
+    preferIpAddress: true
