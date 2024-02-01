@@ -1,0 +1,33 @@
+public class Main{
+    public static void main(String[] args){
+        int result = increment(5);
+        System.out.println(result);
+    }
+
+    static int increment(int number) { return number + 1; }
+}
+
+-------------------------------
+
+public class Main{
+    public static void main(String[] args){
+        int x = 2+2;
+        System.out.println(x);
+    }
+}
+
+
+--------------------------------
+
+import java.util.List;
+import java.util.Arrays;
+
+public class Main{
+    public static void main(String[] args){
+        List<Integer> list = Arrays.asList(1, 2, 3);
+        int sum = list.stream().mapToInt(i -> i * 2).sum();
+        System.out.println(sum);
+    }
+}
+
+
