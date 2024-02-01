@@ -1,0 +1,46 @@
+.main {
+    display: flex;
+    height: calc(100vh - 50px);
+}
+
+.source-container {
+    position: relative;
+    flex: 45%;
+    height: calc(100vh - 50px);
+    padding: 5rem;
+}
+
+.target-container {
+    flex: 45%;
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.middle-container{
+    flex: 10%;
+}
+
+.text-area{
+    width: 100%;
+    margin-top: 1rem;
+    height: 30%;
+}
+
+.translate-btn {
+    position: absolute;
+    left: 35vw;
+    height: 40px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #ec9b3f;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.translate-btn:active {
+    background-color: #6e9427;
+}
